@@ -2,6 +2,8 @@ const express=require("express");
 const cors=require("cors");
 const todoRouter=require("./routes/todos.routes");
 const app=express();
+require('dotenv').config();
+
 
 const corsOptions = {
     origin: ["http://localhost:5173", `${process.env.FE_URL}`],
