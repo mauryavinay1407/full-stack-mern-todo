@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import axios from "axios";
-import { baseURL } from "../utils/constants";
 import { toast } from "react-toastify";
 
 const UserInput = () => {
@@ -14,7 +13,7 @@ const UserInput = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${baseURL}/todos`);
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/todos`);
         setTodos(response.data);
       } catch (error) {
         console.log(error);
@@ -30,7 +29,7 @@ const UserInput = () => {
     }
     try {
       await axios.post(
-        `${baseURL}/addtodo`,
+        `${process.env.REACT_APP_BASE_URL}/addtodo`,
         {
           title,
           description,

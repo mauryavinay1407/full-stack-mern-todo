@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { RxCross1 } from "react-icons/rx";
-import {baseURL} from '../utils/constants'
 import { toast } from "react-toastify";
 import axios from "axios";
 
@@ -16,7 +15,7 @@ const Popup = ({ setShowpopup, setUpdateUI, oldTitle, oldDescription, updateId }
     }
     try {
       await axios.put(
-        `${baseURL}/update/${updateId}`,
+        `${process.env.REACT_APP_BASE_URL}/update/${updateId}`,
         {
           title,
           description,

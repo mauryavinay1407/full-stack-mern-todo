@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from './Layout'
 import { MdEdit,MdDelete  } from "react-icons/md";
-import { baseURL } from '../utils/constants';
 import axios from "axios"
 import Popup from "./Popup";
 
@@ -13,7 +12,7 @@ const TodoList = ({ todos, setUpdateUI }) => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`${baseURL}/delete/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/delete/${id}`);
       setUpdateUI((prevState) => !prevState);
     } catch (error) {
       console.log("Delete failed!!!", error);
