@@ -12,7 +12,7 @@ const TodoList = ({ todos, setUpdateUI }) => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BASE_URL}/delete/${id}`);
+      await axios.delete(`/api/v1/delete/${id}`);
       setUpdateUI((prevState) => !prevState);
     } catch (error) {
       console.log("Delete failed!!!", error);

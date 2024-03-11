@@ -15,7 +15,7 @@ const Popup = ({ setShowpopup, setUpdateUI, oldTitle, oldDescription, updateId }
     }
     try {
       await axios.put(
-        `${process.env.REACT_APP_BASE_URL}/update/${updateId}`,
+        `/api/v1/update/${updateId}`,
         {
           title,
           description,

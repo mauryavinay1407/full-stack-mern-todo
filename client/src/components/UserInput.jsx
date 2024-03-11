@@ -13,7 +13,7 @@ const UserInput = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/todos`);
+        const response = await axios.get(`/api/v1/todos`);
         setTodos(response.data);
       } catch (error) {
         console.log(error);
@@ -29,7 +29,7 @@ const UserInput = () => {
     }
     try {
       await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/addtodo`,
+        `/api/v1/addtodo`,
         {
           title,
           description,
