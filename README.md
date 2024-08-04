@@ -20,7 +20,7 @@
 * Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/full-stack-mern-todo.git
+git clone https://github.com/mauryavinay1407/full-stack-mern-todo.git
 ```
 
 * Install server dependencies:
