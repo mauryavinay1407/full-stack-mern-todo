@@ -29,7 +29,7 @@ const UserInput = () => {
     }
     try {
       console.log("add todo failed!!!");
-      await axios.post(
+     const response= await axios.post(
         `/api/v1/addtodo`,
         {
           title,
@@ -41,6 +41,7 @@ const UserInput = () => {
           },
         }
       );
+      console.log(response);
       setUpdateUI((prevState) => !prevState);
       setTitle("");
       setDescription("");
