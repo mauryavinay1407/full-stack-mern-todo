@@ -28,6 +28,7 @@ const UserInput = () => {
       return;
     }
     try {
+      console.log("add todo failed!!!");
       await axios.post(
         `/api/v1/addtodo`,
         {
